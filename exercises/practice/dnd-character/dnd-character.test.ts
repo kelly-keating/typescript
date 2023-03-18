@@ -72,6 +72,17 @@ describe('Ability generator', () => {
     expect(abilityScore).toBeGreaterThanOrEqual(3)
     expect(abilityScore).toBeLessThanOrEqual(18)
   })
+
+  xit('Random ability generates an assortment of values', () => {
+    const abilityScores = [
+      DnDCharacter.generateAbilityScore(),
+      DnDCharacter.generateAbilityScore(),
+      DnDCharacter.generateAbilityScore(),
+    ]
+
+    const uniqueValues = [...new Set(abilityScores)]
+    expect(uniqueValues).not.toHaveLength(1)
+  })
 })
 
 describe('Character creation', () => {
